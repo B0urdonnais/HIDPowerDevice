@@ -153,9 +153,9 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     0xA1, 0x02, //     COLLECTION (Logical)
   // add current
     0x85, HID_PD_CURRENT, //     REPORT_ID (21)  copied from PD voltage above
-    0x09, 0x31, //     USAGE (Voltage)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
+    0x09, 0x31, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
     0x81, 0xA3, //     INPUT (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Bitfield)
-    0x09, 0x31, //     USAGE (Voltage)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
+    0x09, 0x31, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
     0xB1, 0xA3, //     FEATURE (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Volatile, Bitfield)
   // /add current
     0x85, HID_PD_PRESENTSTATUS, //       REPORT_ID (7)
