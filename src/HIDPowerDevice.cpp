@@ -150,14 +150,23 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     0x09, 0x5A, //     USAGE (AudibleAlarmControl)
     0xB1, 0xA2, //     FEATURE (Data, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Volatile, Bitfield)
     0x09, 0x02, //     USAGE (PresentStatus)
-    0xA1, 0x02, //     COLLECTION (Logical)
-  // add current --we're in x85
+    0xA1, 0x02, //     COLLECTION (Logical)   
+  // add averagecurrent --we're in x85
     0x85, HID_PD_AVERAGECURRENT, //     REPORT_ID (21)  copied from PD voltage above 0x1b in hidpowerdevice.h, 62 in usb reference
     0x09, 0x62, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
     0x81, 0xA3, //     INPUT (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Bitfield)
     0x09, 0x62, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
     0xB1, 0xA3, //     FEATURE (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Volatile, Bitfield)
-  // /add current
+  // /add averagecurrent
+
+ // add current --we're in x84
+    0x84, HID_PD_CURRENT, //     REPORT_ID (21)  copied from PD voltage above 0x31 in hidpowerdevice.h
+    0x09, 0x31, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
+    0x81, 0xA3, //     INPUT (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Bitfield)
+    0x09, 0x31, //     USAGE (Current)  <-- wrong, maybe 31 (see page 21 of usb hid spec)
+    0xB1, 0xA3, //     FEATURE (Constant, Variable, Absolute, No Wrap, Linear, No Preferred, No Null Position, Volatile, Bitfield)
+  // /add current 
+
     0x85, HID_PD_PRESENTSTATUS, //       REPORT_ID (7)
     0x05, 0x85, //       USAGE_PAGE (Battery System) =================
     0x09, 0x44, //       USAGE (Charging)
